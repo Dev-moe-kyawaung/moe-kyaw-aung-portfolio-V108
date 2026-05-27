@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags for SEO & Performance -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⭐MOE KYAW AUNG ⭐ | Senior Android Developer | Kotlin | Jetpack Compose</title>
+  <meta name="description" content="Senior Android Developer with 12+ years experience. Kotlin, Jetpack Compose, MVVM, Clean Architecture, Firebase, CI/CD. Tachileik, Myanmar ↔ Bangkok, Thailand">
+  <meta name="keywords" content="Android Developer, Kotlin, Jetpack Compose, Senior Android Engineer, MVVM, Clean Architecture, Firebase, Myanmar Developer, Thailand Developer">
+  <meta name="author" content="Moe Kyaw Aung">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="⭐MOE KYAW AUNG ⭐ | Senior Android Developer">
+  <meta property="og:description" content="12+ years building secure, scalable Android apps with Kotlin & Jetpack. Open to work!">
+  <meta property="og:image" content="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
+          },
+          colors: {
+            'charcoal': '#222831',
+            'gunmetal': '#393E46',
+            'khaki': '#948979',
+            'sand': '#DFD0B8',
+          },
+          animation: {
+            'typewriter': 'typewriter 4s steps(40) infinite alternate',
+            'blink': 'blink 1s infinite',
+            'pulse-slow': 'pulse 3s infinite',
+          },
+          keyframes: {
+            typewriter: {
+              '0%': { width: '0%' },
+              '100%': { width: '100%' }
+            },
+            blink: {
+              '0%, 50%': { borderColor: 'transparent' },
+              '51%, 100%': { borderColor: 'currentColor' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" type="image/webp">
+  
+  <style>
+    /* Custom CSS Variables */
+    :root {
+      --charcoal: #222831;
+      --gunmetal: #393E46;
+      --khaki: #948979;
+      --sand: #DFD0B8;
+      --terminal-green: #00FF41;
+      --code-blue: #00D4FF;
+    }
+    
+    [data-theme="dark"] {
+      --bg-primary: var(--charcoal);
+      --bg-secondary: var(--gunmetal);
+      --text-primary: #EDEDED;
+      --text-secondary: #A0A0A0;
+      --accent: var(--sand);
+    }
+    
+    [data-theme="light"] {
+      --bg-primary: #F8F9FA;
+      --bg-secondary: #E9ECEF;
+      --text-primary: #212529;
+      --text-secondary: #6C757D;
+      --accent: var(--khaki);
+    }
+    
+    * {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+    
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    /* Terminal Effect */
+    .terminal-glow {
+      text-shadow: 0 0 10px var(--terminal-green), 0 0 20px var(--terminal-green);
+    }
+    
+    .code-block {
+      background: rgba(57, 62, 70, 0.5);
+      border-left: 4px solid var(--terminal-green);
+      padding: 1rem;
+      border-radius: 0 8px 8px 0;
+      font-family: 'Fira Code', monospace;
+    }
+    
+    /* Custom Cursor */
+    .custom-cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: var(--terminal-green);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease;
+      mix-blend-mode: difference;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen transition-colors duration-300" data-theme="dark">
+  
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-charcoal z-[99999] flex items-center justify-center">
+    <div class="terminal-glow text-4xl animate-pulse">> LOADING PORTFOLIO V108...</div>
+  </div>
+  
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-50 bg-charcoal/95 backdrop-blur-md border-b border-gunmetal/50 px-6 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" alt="MKA" class="w-12 h-12 rounded-full border-2 border-khaki shadow-lg">
+        <div>
+          <div class="text-xl font-bold bg-gradient-to-r from-sand to-khaki bg-clip-text text-transparent">Moe Kyaw Aung</div>
+          <div class="text-xs text-khaki opacity-80">V108 Portfolio</div>
+        </div>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link text-sm font-medium hover:text-sand transition-colors">Home</a>
+        <a href="#about" class="nav-link text-sm font-medium hover:text-sand transition-colors">About</a>
+        <a href="#skills" class="nav-link text-sm font-medium hover:text-sand transition-colors">Skills</a>
+        <a href="#projects" class="nav-link text-sm font-medium hover:text-sand transition-colors">Projects</a>
+        <a href="#github" class="nav-link text-sm font-medium hover:text-sand transition-colors">GitHub</a>
+        <a href="#contact" class="nav-link text-sm font-medium hover:text-sand transition-colors">Contact</a>
+      </div>
+      
+      <!-- Right Controls -->
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="p-2 rounded-lg bg-gunmetal/50 hover:bg-gunmetal transition-all duration-200" title="Toggle Theme">
+          <i class="fas fa-moon text-xl text-sand"></i>
+        </button>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-gunmetal/50 hover:bg-gunmetal transition-all">
+          <i class="fas fa-bars text-xl text-sand"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-charcoal border-t border-gunmetal px-6 py-4 space-y-4">
+      <a href="#home" class="block py-2 hover:text-sand transition-colors">Home</a>
+      <a href="#about" class="block py-2 hover:text-sand transition-colors">About</a>
+      <a href="#skills" class="block py-2 hover:text-sand transition-colors">Skills</a>
+      <a href="#projects" class="block py-2 hover:text-sand transition-colors">Projects</a>
+      <a href="#github" class="block py-2 hover:text-sand transition-colors">GitHub</a>
+      <a href="#contact" class="block py-2 hover:text-sand transition-colors">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <!-- Animated Background -->
+    <div class="absolute inset-0">
+      <canvas id="heroCanvas" class="w-full h-full"></canvas>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div class="inline-block mb-8">
+        <span class="inline-flex items-center px-4 py-2 bg-gunmetal/80 rounded-full border border-khaki/50 animate-pulse-slow">
+          <i class="fas fa-terminal mr-2 text-khaki"></i>
+          Senior Android Developer
+        </span>
+      </div>
+      
+      <!-- Typing Animation -->
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-sand via-khaki to-sand bg-clip-text text-transparent typewriter">
+        <span id="heroText"></span>
+        <span class="animate-blink">|</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90 leading-relaxed">
+        12+ years building secure, scalable Android apps with <code class="bg-gunmetal px-2 py-1 rounded text-terminal-green font-bold">Kotlin</code> & 
+        <code class="bg-gunmetal px-2 py-1 rounded text-terminal-green font-bold">Jetpack Compose</code>
+      </p>
+      
+      <!-- Stats Counters -->
+      <div class="grid md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-sand" data-target="12">0</div>
+          <div class="text-sm opacity-75">Years Experience</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-sand" data-target="3000">0</div>
+          <div class="text-sm opacity-75">Apps Built</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-sand" data-target="122">0</div>
+          <div class="text-sm opacity-75">GitHub Repos</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-sand" data-target="100">0</div>
+          <div class="text-sm opacity-75">Satisfaction Rate</div>
+        </div>
+      </div>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#projects" class="btn-primary group">
+          <i class="fas fa-rocket mr-2 group-hover:translate-x-1 transition-transform"></i>
+          View My Work
+        </a>
+        <a href="#contact" class="btn-secondary group">
+          <i class="fas fa-envelope mr-2 group-hover:translate-x-1 transition-transform"></i>
+          Get In Touch
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-2xl text-sand"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-32 bg-gunmetal/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <div class="s-label">About Me</div>
+        <h2 class="s-title">Android Developer by passion,<br>problem-solver by nature</h2>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Profile Image & Progress Rings -->
+        <div class="relative">
+          <div class="relative z-10">
+            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png" 
+                 alt="Moe Kyaw Aung" class="w-full max-w-md mx-auto rounded-3xl shadow-2xl border-4 border-khaki/20">
+            <div class="absolute -inset-4 bg-gradient-to-r from-khaki/20 to-sand/20 rounded-3xl blur-xl animate-pulse"></div>
+          </div>
+          
+          <!-- Progress Rings -->
+          <div class="grid grid-cols-2 gap-6 mt-8">
+            <div class="text-center">
+              <svg class="w-20 h-20 mx-auto mb-4" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#393E46" stroke-width="5"></circle>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#DFD0B8" stroke-width="5" stroke-dasharray="282" stroke-dashoffset="100" stroke-linecap="round" class="progress-ring"></circle>
+              </svg>
+              <div class="font-bold text-2xl text-sand">90%</div>
+              <div class="text-sm opacity-75">Kotlin</div>
+            </div>
+            <div class="text-center">
+              <svg class="w-20 h-20 mx-auto mb-4" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#393E46" stroke-width="5"></circle>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#948979" stroke-width="5" stroke-dasharray="282" stroke-dashoffset="120" stroke-linecap="round" class="progress-ring"></circle>
+              </svg>
+              <div class="font-bold text-2xl text-khaki">80%</div>
+              <div class="text-sm opacity-75">Compose</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- About Content -->
+        <div class="space-y-8">
+          <div class="about-timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot bg-terminal-green"></div>
+              <div class="timeline-content">
+                <h3 class="font-bold text-2xl mb-2">Tachileik, Myanmar 🇲🇲 ↔ Bangkok, Thailand 🇹🇭</h3>
+                <p>Building world-class Android apps across borders</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot bg-khaki"></div>
+              <div class="timeline-content">
+                <h3 class="font-bold text-2xl mb-2">Languages: Burmese 🇲🇲 | English 🌐 | Kotlin ☕</h3>
+                <p>Fluent communicator and Kotlin expert</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot bg-sand"></div>
+              <div class="timeline-content">
+                <h3 class="font-bold text-2xl mb-2">Currently Building</h3>
+                <p class="code-block">MoekyawTranslator — AI Translation App</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="info-card p-6 bg-charcoal/50 rounded-2xl border border-gunmetal/50">
+              <div class="text-3xl mb-4"><i class="fas fa-certificate text-khaki"></i></div>
+              <h4 class="font-bold text-xl mb-2">40+ Certifications</h4>
+              <p class="opacity-75">Google Developers Launchpad & more</p>
+            </div>
+            <div class="info-card p-6 bg-charcoal/50 rounded-2xl border border-gunmetal/50">
+              <div class="text-3xl mb-4"><i class="fas fa-code text-sand"></i></div>
+              <h4 class="font-bold text-xl mb-2">Code Philosophy</h4>
+              <p class="opacity-75">"Code with culture. Build with purpose."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-32">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <div class="s-label">Tech Stack</div>
+        <h2 class="s-title">Tools I use to build amazing apps</h2>
+      </div>
+      
+      <!-- Tech Stack Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Mobile -->
+        <div class="skill-category">
+          <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-mobile-alt mr-3 text-3xl text-sand"></i>Android / Mobile</h3>
+          <div class="skill-tags">
+            <span class="skill-tag bg-gradient-to-r from-purple-500 to-indigo-500">Kotlin</span>
+            <span class="skill-tag bg-gradient-to-r from-blue-500 to-blue-400">Jetpack Compose</span>
+            <span class="skill-tag bg-gradient-to-r from-green-400 to-green-500">Android Studio</span>
+            <span class="skill-tag bg-gradient-to-r from-orange-500 to-orange-400">Material 3</span>
+          </div>
+        </div>
+        
+        <!-- Architecture -->
+        <div class="skill-category">
+          <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-layer-group mr-3 text-3xl text-khaki"></i>Architecture</h3>
+          <div class="skill-tags">
+            <span class="skill-tag bg-gradient-to-r from-yellow-500 to-orange-500">MVVM</span>
+            <span class="skill-tag bg-gradient-to-r from-gray-600 to-gray-500">Clean Arch</span>
+            <span class="skill-tag bg-gradient-to-r from-purple-500 to-pink-500">Coroutines</span>
+            <span class="skill-tag bg-gradient-to-r from-indigo-500 to-purple-500">Kotlin Flow</span>
+          </div>
+        </div>
+        
+        <!-- Backend -->
+        <div class="skill-category">
+          <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-cloud mr-3 text-3xl text-terminal-green"></i>Backend & Cloud</h3>
+          <div class="skill-tags">
+            <span class="skill-tag bg-gradient-to-r from-yellow-400 to-orange-400">Firebase</span>
+            <span class="skill-tag bg-gradient-to-r from-teal-500 to-cyan-500">Retrofit</span>
+            <span class="skill-tag bg-gradient-to-r from-green-500 to-teal-500">Room DB</span>
+            <span class="skill-tag bg-gradient-to-r from-blue-500 to-indigo-500">REST APIs</span>
+          </div>
+        </div>
+        
+        <!-- DevOps -->
+        <div class="skill-category">
+          <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-cogs mr-3 text-3xl text-sand"></i>DevOps & Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag bg-gradient-to-r from-green-400 to-blue-400">GitHub Actions</span>
+            <span class="skill-tag bg-gradient-to-r from-gray-700 to-gray-500">Dagger/Hilt</span>
+            <span class="skill-tag bg-gradient-to-r from-orange-400 to-red-400">Fastlane</span>
+            <span class="skill-tag bg-gradient-to-r from-blue-400 to-cyan-400">CI/CD</span>
+          </div>
+        </div>
+        
+        <!-- AI/ML -->
+        <div class="skill-category">
+          <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-robot mr-3 text-3xl text-khaki"></i>AI / ML</h3>
+          <div class="skill-tags">
+            <span class="skill-tag bg-gradient-to-r from-orange-500 to-red-500">TensorFlow Lite</span>
+            <span class="skill-tag bg-gradient-to-r from-purple-500 to-pink-500">Claude API</span>
+            <span class="skill-tag bg-gradient-to-r from-yellow-500 to-orange-500">On-Device ML</span>
+          </div>
+        </div>
+        
+        <!-- Security -->
+        <div class="skill-category">
+          <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-shield-alt mr-3 text-3xl text-terminal-green"></i>Cybersecurity</h3>
+          <div class="skill-tags">
+            <span class="skill-tag bg-gradient-to-r from-green-500 to-emerald-500">Ethical Hacking</span>
+            <span class="skill-tag bg-gradient-to-r from-gray-800 to-gray-600">Linux/Kali</span>
+            <span class="skill-tag bg-gradient-to-r from-red-500 to-pink-500">Security Best Practices</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section id="projects" class="py-32 bg-gunmetal/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <div class="s-label">App Collection</div>
+        <h2 class="s-title">My Senior Level Android Projects</h2>
+      </div>
+      
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Video Player -->
+        <div class="project-card group">
+          <div class="project-image">
+            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795825/cloud-icon-poster-1_2_opl7sy.png" alt="Video Player" class="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform">
+            <div class="project-overlay">
+              <i class="fas fa-play-circle text-4xl text-terminal-green"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3 group-hover:text-sand transition-colors">🎯 Video Player</h3>
+            <p class="opacity-75 mb-4">Advanced video player with ExoPlayer, offline caching, and modern Compose UI</p>
+            <a href="https://github.com/moekyawaung-tech/video-player" target="_blank" class="btn-primary w-full text-center">View Code</a>
+          </div>
+        </div>
+
+        <!-- Social Dashboard -->
+        <div class="project-card group">
+          <div class="project-image">
+            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747384/image_1_buwgls.png" alt="Social Dashboard" class="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform">
+            <div class="project-overlay">
+              <i class="fas fa-chart-line text-4xl text-khaki"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3 group-hover:text-sand transition-colors">📱 Social Dashboard</h3>
+            <p class="opacity-75 mb-4">Real-time social analytics with Firebase & beautiful Compose charts</p>
+            <a href="https://github.com/moekyawaung-tech/social-dashboard" target="_blank" class="btn-primary w-full text-center">View Code</a>
+          </div>
+        </div>
+
+        <!-- POS Ultimate Pro Max -->
+        <div class="project-card group">
+          <div class="project-image">
+            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795675037_heh9xk.png" alt="POS Ultimate" class="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform">
+            <div class="project-overlay">
+              <i class="fas fa-cash-register text-4xl text-sand"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3 group-hover:text-sand transition-colors">💰 POS Ultimate Pro Max</h3>
+            <p class="opacity-75 mb-4">Complete POS solution with inventory, payments, and offline sync</p>
+            <a href="https://github.com/moekyawaung-tech/POS-Ultimate-Pro-Max" target="_blank" class="btn-primary w-full text-center">View Code</a>
+          </div>
+        </div>
+
+        <!-- Game Collection -->
+        <div class="project-card group">
+          <div class="project-image">
+            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778794626112_ega7kk.png" alt="Game Collection" class="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform">
+            <div class="project-overlay">
+              <i class="fas fa-gamepad text-4xl text-terminal-green"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3 group-hover:text-sand transition-colors">🎮 Game Collection</h3>
+            <p class="opacity-75 mb-4">Multi-game app with Snake, puzzles, and Canvas graphics</p>
+            <a href="https://github.com/moekyawaung-tech/game-collection" target="_blank" class="btn-primary w-full text-center">View Code</a>
+          </div>
+        </div>
+
+        <!-- Job Portal -->
+        <div class="project-card group">
+          <div class="project-image">
+            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795859/copilot_image_1778794430377_n7xlmz.png" alt="Job Portal" class="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform">
+            <div class="project-overlay">
+              <i class="fas fa-briefcase text-4xl text-khaki"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3 group-hover:text-sand transition-colors">💼 Job Portal App</h3>
+            <p class="opacity-75 mb-4">Complete job search app with Firebase backend & advanced filters</p>
+            <a href="https://github.com/moekyawaung-tech/Job-Portal-App" target="_blank" class="btn-primary w-full text-center">View Code</a>
+          </div>
+        </div>
+
+        <!-- PWA App -->
+        <div class="project-card group">
+          <div class="project-image">
+            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795000722_eo96gj.png" alt="PWA App" class="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform">
+            <div class="project-overlay">
+              <i class="fas fa-mobile-alt text-4xl text-sand"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3 group-hover:text-sand transition-colors">📱 PWA App</h3>
+            <p class="opacity-75 mb-4">Progressive Web App with offline support & service workers</p>
+            <a href="https://github.com/moekyawaung-tech/pwa-app" target="_blank" class="btn-primary w-full text-center">View Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Collections Section -->
+  <section id="github" class="py-32 bg-charcoal/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <div class="s-label">GitHub Ecosystem</div>
+        <h2 class="s-title">43+ GitHub Accounts & Deployments</h2>
+      </div>
+      
+      <!-- GitHub Grid -->
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+        <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="github-card p-6 bg-gunmetal rounded-2xl hover:bg-gunmetal/80 transition-all border border-khaki/30 hover:border-khaki hover:-translate-y-2">
+          <i class="fas fa-crown text-2xl mb-3 text-khaki"></i>
+          <div class="font-bold mb-1">Dev-moe-kyawaung</div>
+          <div class="text-xs opacity-75">Main Account</div>
+        </a>
+        <a href="https://moekyawaung-tech.github.io/" target="_blank" class="github-card p-6 bg-gunmetal rounded-2xl hover:bg-gunmetal/80 transition-all border border-khaki/30 hover:border-khaki hover:-translate-y-2">
+          <i class="fas fa-robot text-2xl mb-3 text-sand"></i>
+          <div class="font-bold mb-1">moekyawaung-tech</div>
+          <div class="text-xs opacity-75">Tech Projects</div>
+        </a>
+        <a href="https://moekyawaung-china.github.io/" target="_blank" class="github-card p-6 bg-gunmetal rounded-2xl hover:bg-gunmetal/80 transition-all border border-khaki/30 hover:border-khaki hover:-translate-y-2">
+          <div class="font-bold mb-1">moekyawaung-china</div>
+          <div class="text-xs opacity-75">China Projects</div>
+        </a>
+        <!-- Add more GitHub accounts here -->
+      </div>
+      
+      <div class="text-center">
+        <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="btn-primary text-lg px-12">
+          <i class="fab fa-github mr-3"></i>
+          Explore All 43+ Accounts
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-32">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <div class="s-label">Get In Touch</div>
+        <h2 class="s-title">Ready to build something amazing?</h2>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">📞 Phone</h3>
+            <div class="space-y-2">
+              <a href="tel:+959889000889" class="flex items-center p-3 bg-charcoal/50 rounded-xl hover:bg-charcoal transition-all">
+                <i class="fas fa-phone text-xl mr-4 text-khaki"></i>
+                <span>+95 9 889 000 889</span>
+              </a>
+              <a href="tel:+959666000050" class="flex items-center p-3 bg-charcoal/50 rounded-xl hover:bg-charcoal transition-all">
+                <i class="fas fa-phone text-xl mr-4 text-khaki"></i>
+                <span>+95 9 666 000 050</span>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-2xl font-bold mb-4">✉️ Email Collection</h3>
+            <div class="grid md:grid-cols-2 gap-2">
+              <a href="mailto:moekyawaung@programmer.net" class="email-tag p-3 bg-gunmetal rounded-xl hover:bg-charcoal transition-all">programmer.net</a>
+              <a href="mailto:moekyawaung@technologist.com" class="email-tag p-3 bg-gunmetal rounded-xl hover:bg-charcoal transition-all">technologist.com</a>
+              <a href="mailto:moekyawaung@engineer.com" class="email-tag p-3 bg-gunmetal rounded-xl hover:bg-charcoal transition-all">engineer.com</a>
+              <a href="mailto:moekyawaung@mail.com" class="email-tag p-3 bg-gunmetal rounded-xl hover:bg-charcoal transition-all">mail.com</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <form id="contactForm" class="space-y-6">
+          <div>
+            <input type="text" placeholder="Your Name" required class="contact-input" name="name">
+          </div>
+          <div>
+            <input type="email" placeholder="Your Email" required class="contact-input" name="email">
+          </div>
+          <div>
+            <input type="text" placeholder="Subject" required class="contact-input" name="subject">
+          </div>
+          <div>
+            <textarea placeholder="Your Message" rows="6" required class="contact-input" name="message"></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full py-6 text-xl">
+            <i class="fas fa-paper-plane mr-3"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="py-20 bg-charcoal">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h3 class="text-3xl font-bold mb-4">🌐 Connect With Me</h3>
+        <p class="opacity-75">Follow my journey across all platforms</p>
+      </div>
+      
+      <div class="grid md:grid-cols-4 lg:grid-cols-8 gap-4">
+        <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="social-link p-4 bg-gunmetal rounded-2xl hover:bg-terminal-green hover:text-charcoal transition-all">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/moe-kyaw-aung-2653093a1" target="_blank" class="social-link p-4 bg-gunmetal rounded-2xl hover:bg-blue-600 transition-all">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://gravatar.com/moekyawaung13721" target="_blank" class="social-link p-4 bg-gunmetal rounded-2xl hover:bg-orange-500 transition-all">
+          <i class="fas fa-user-circle text-2xl"></i>
+        </a>
+        <!-- Add more social links -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal/80 border-t border-gunmetal py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="flex justify-center items-center space-x-6 mb-6 opacity-75">
+        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" alt="MKA" class="w-10 h-10 rounded-full">
+        <span>© 2025 Moe Kyaw Aung V108. Built with ❤️ in Myanmar ↔ Thailand</span>
+      </div>
+      <div class="text-sm opacity-50">
+        <span>+95 9 889 000 889</span> | 
+        <a href="mailto:moekyawaung@programmer.net" class="hover:text-sand transition-colors">moekyawaung@programmer.net</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-terminal-green text-charcoal rounded-full text-xl font-bold shadow-lg hover:shadow-2xl transition-all z-40 hidden">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // Global Variables
+    const typingTexts = [
+      "Moe Kyaw Aung",
+      "Senior Android Developer", 
+      "Kotlin Master",
+      "Jetpack Compose Expert"
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    // Preloader
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    // Custom Cursor
+    const cursor = document.getElementById('customCursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Update icon
+      const icon = themeToggle.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'light') {
+      themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+    }
+
+    // Mobile Menu
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // Typing Animation
+    function typeWriter() {
+      const heroText = document.getElementById('heroText');
+      const fullText = typingTexts[textIndex];
+      
+      if (isDeleting) {
+        heroText.textContent = fullText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        heroText.textContent = fullText.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      let typeSpeed = isDeleting ? 50 : 150;
+      
+      if (!isDeleting && charIndex === fullText.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % typingTexts.length;
+        typeSpeed = 500;
+      }
+      
+      setTimeout(typeWriter, typeSpeed);
+    }
+    typeWriter();
+
+    // Animated Counters
+    function animateCounters() {
+      const counters = document.querySelectorAll('[data-target]');
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+          if (current < target) {
+            current += increment;
+            counter.textContent = Math.floor(current) + (target > 100 ? '+' : '%');
+            setTimeout(updateCounter, 20);
+          } else {
+            counter.textContent = target + (target > 100 ? '+' : '%');
+          }
+        };
+        updateCounter();
+      });
+    }
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+          if (entry.target.querySelector('[data-target]')) {
+            animateCounters();
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Smooth Scroll for Nav Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 1000) {
+        backToTop.classList.remove('hidden');
+        backToTop.classList.add('animate-bounce');
+      } else {
+        backToTop.classList.add('hidden');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Contact Form
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      
+      // Simulate form submission
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Sending...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('🎉 Message sent successfully! I\'ll get back to you within 24 hours.');
+        e.target.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+
+    // Hero Canvas Animation (Particle System)
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const particleCount = 100;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+      }
+      
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      }
+      
+      draw() {
+        ctx.fillStyle = 'rgba(212, 208, 184, 0.3)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // Initialize particles
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Resize canvas
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Progress Rings Animation
+    document.querySelectorAll('.progress-ring').forEach((ring, index) => {
+      const circumference = 2 * Math.PI * 45;
+      ring.style.strokeDasharray = `${circumference} ${circumference}`;
+      
+      setTimeout(() => {
+        ring.style.strokeDashoffset = '0';
+      }, index * 200);
+    });
+
+    // Add fade-in-up animation class
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.8s ease-out forwards;
+      }
+      .s-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #948979;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        position: relative;
+      }
+      .s-label::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #948979, #DFD0B8);
+      }
+      .s-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        background: linear-gradient(135deg, #DFD0B8 0%, #948979 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+      .btn-primary {
+        @apply bg-gradient-to-r from-khaki to-sand text-charcoal font-bold py-4 px-8 rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center shadow-lg;
+      }
+      .btn-secondary {
+        @apply bg-charcoal/50 border-2 border-khaki/50 text-khaki font-bold py-4 px-8 rounded-2xl hover:bg-khaki hover:text-charcoal transition-all duration-300 inline-flex items-center;
+      }
+      .skill-tag {
+        @apply inline-block py-2 px-4 rounded-full text-sm font-medium mb-2 mr-2 shadow-lg cursor-default;
+      }
+      .project-card {
+        @apply bg-charcoal/50 rounded-3xl overflow-hidden border border-gunmetal/50 hover:border-khaki/50 transition-all duration-300 hover:shadow-2xl;
+      }
+      .project-image {
+        @apply relative overflow-hidden h-64;
+      }
+      .project-overlay {
+        @apply absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300;
+      }
+      .contact-input {
+        @apply w-full p-4 bg-charcoal/50 border border-gunmetal/50 rounded-2xl text-lg placeholder-opacity-50 focus:border-khaki/70 focus:outline-none focus:ring-2 focus:ring-khaki/30 transition-all duration-300;
+      }
+      .social-link {
+        @apply flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-xl;
+      }
+      .github-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .about-timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+      .timeline-dot {
+        position: absolute;
+        left: -3rem;
+        top: 0.5rem;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px var(--charcoal);
+      }
+      .skill-category {
+        @apply p-8 bg-charcoal/50 rounded-3xl border border-gunmetal/50;
+      }
+      .skill-tags {
+        @apply space-y-2;
+      }
+      .email-tag {
+        transition: all 0.3s ease;
+      }
+      .terminal-glow {
+        text-shadow: 0 0 5px currentColor;
+      }
+      .animate-blink {
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
